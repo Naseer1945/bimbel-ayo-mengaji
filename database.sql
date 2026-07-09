@@ -11,6 +11,8 @@ USE `bimbel_ayo_mengaji`;
 
 -- Bersihkan tabel lama (urutan menghormati foreign key)
 DROP VIEW  IF EXISTS `view_dashboard_stats`;
+DROP TABLE IF EXISTS `notifikasi`;
+DROP TABLE IF EXISTS `promosi`;
 DROP TABLE IF EXISTS `log_aktivitas`;
 DROP TABLE IF EXISTS `tugas_pengajar`;
 DROP TABLE IF EXISTS `assets_galeri`;
@@ -241,10 +243,11 @@ CREATE TABLE IF NOT EXISTS `notifikasi` (
     `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-CREATE INDEX IF NOT EXISTS `idx_notif_user` ON `notifikasi`(`user_id`, `is_read`);
+-- Sintaks kompatibel MySQL murni (IF NOT EXISTS pada index/kolom hanya ada di MariaDB)
+CREATE INDEX `idx_notif_user` ON `notifikasi`(`user_id`, `is_read`);
 
 -- Urutan tampil pengajar (rotasi oleh manager)
-ALTER TABLE `pengajar` ADD COLUMN IF NOT EXISTS `urutan_tampil` INT DEFAULT 0;
+ALTER TABLE `pengajar` ADD COLUMN `urutan_tampil` INT DEFAULT 0;
 
 -- Link YouTube (dikelola manager) + toggle fitur (dikelola super admin)
 INSERT IGNORE INTO `pengaturan` (nama_key, nilai) VALUES
