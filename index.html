@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bimbel Ayo Mengaji 📖✨ | Belajar Al-Qur'an Mudah & Menyenangkan</title>
+    <meta name="description" content="Bimbel Ayo Mengaji - Belajar Al-Qur'an untuk anak & remaja (6-17 th) dengan guru privat yang datang ke rumah. Metode mudah, menyenangkan, dan fleksibel di Cianjur.">
+
+    <!-- global.css   : tema, reset, background emoji, animasi tombol, komponen global -->
+    <!-- main-page.css : styling khusus landing page (hero, grid program & keunggulan)  -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/main-page.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="page-fade">
+
+    <!-- ============================================================
+         BACKGROUND EMOJI POP-ART (dekoratif, opasitas rendah, mengambang)
+         ============================================================ -->
+    <div class="bg-emojis" aria-hidden="true">
+        <span style="--x:6%;  --y:14%; --d:0s;   --s:1.4rem;">📚</span>
+        <span style="--x:18%; --y:72%; --d:1.2s; --s:1.1rem;">✨</span>
+        <span style="--x:30%; --y:30%; --d:2.4s; --s:1.6rem;">🚀</span>
+        <span style="--x:42%; --y:84%; --d:0.6s; --s:1.2rem;">🧠</span>
+        <span style="--x:54%; --y:20%; --d:1.8s; --s:1.5rem;">🎯</span>
+        <span style="--x:66%; --y:66%; --d:3s;   --s:1.3rem;">⭐</span>
+        <span style="--x:78%; --y:26%; --d:0.9s; --s:1.6rem;">🗣️</span>
+        <span style="--x:90%; --y:60%; --d:2.1s; --s:1.4rem;">📖</span>
+        <span style="--x:12%; --y:46%; --d:1.5s; --s:1.2rem;">⭐</span>
+        <span style="--x:48%; --y:54%; --d:2.7s; --s:1.1rem;">✨</span>
+        <span style="--x:72%; --y:88%; --d:0.3s; --s:1.5rem;">📚</span>
+        <span style="--x:84%; --y:12%; --d:3.3s; --s:1.3rem;">🧠</span>
+        <span style="--x:24%; --y:10%; --d:1s;   --s:1.2rem;">📖</span>
+        <span style="--x:60%; --y:40%; --d:2.2s; --s:1.4rem;">🚀</span>
+    </div>
+
+    <!-- ============================================================
+         NAVBAR (komponen global) — nav ke arsitektur 3-page final
+         ============================================================ -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">📖 Ayo <span>Mengaji</span></a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html"            class="nav-link active">🏠 Beranda</a></li>
+                    <li><a href="tentang-kami.html"      class="nav-link">✨ Tentang</a></li>
+                    <li><a href="slide-keunggulan.html"  class="nav-link">⭐ Keunggulan</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Ganti Tema">☀️</button>
+                <!-- CTA Daftar -> Google Form -->
+                <a href="https://forms.gle/4ijGJsMPJuZSNDnN6" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-nav-cta">Daftar 🚀</a>
+                <button class="hamburger" id="hamburger" aria-label="Buka Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================================
+         HERO SECTION
+         ============================================================ -->
+    <section class="hero" id="hero">
+        <div class="container hero-content">
+            <span class="hero-tag">📖 Belajar Al-Qur'an Sejak Dini ✨</span>
+            <h1 class="hero-title">
+                Bimbel <span class="text-gradient">Ayo Mengaji</span>
+                <span class="emoji-pop">📖</span>
+            </h1>
+            <p class="hero-subtitle">
+                Belajar Mengaji <strong>Mudah</strong> 🎯, <strong>Menyenangkan</strong> 🥰, dan <strong>Fleksibel</strong> ⏳
+            </p>
+            <p class="hero-desc">
+                Khusus untuk Anak-anak &amp; Remaja (Usia 6–17 Tahun). Guru privat datang langsung ke rumah,
+                menghadirkan suasana belajar Al-Qur'an yang ramah, interaktif, dan penuh keberkahan! 🚀
+            </p>
+            <div class="hero-buttons">
+                <a href="https://forms.gle/4ijGJsMPJuZSNDnN6" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">Daftar Sekarang 🚀</a>
+                <a href="slide-keunggulan.html" class="btn btn-outline btn-lg">Lihat Keunggulan ⭐</a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat-item"><span class="stat-num">6–17</span><span class="stat-label">Usia Santri 🧒</span></div>
+                <div class="stat-item"><span class="stat-num">8×</span><span class="stat-label">Pertemuan 📅</span></div>
+                <div class="stat-item"><span class="stat-num">60'</span><span class="stat-label">Per Sesi ⏳</span></div>
+                <div class="stat-item"><span class="stat-num">100%</span><span class="stat-label">Datang ke Rumah 🏠</span></div>
+            </div>
+        </div>
+
+        <div class="hero-wave" aria-hidden="true">
+            <svg viewBox="0 0 1440 100" preserveAspectRatio="none"><path d="M0,40 C360,100 1080,0 1440,50 L1440,100 L0,100 Z"></path></svg>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         PROGRAM UTAMA (2 Program) — CTA ke Google Form
+         ============================================================ -->
+    <section class="section program-utama" id="program">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge">Program Utama 📚</span>
+                <h2 class="section-title">Materi <span>Inti</span> Pembelajaran 🎯</h2>
+                <p class="section-desc">Dua fondasi penting agar santri dapat membaca Al-Qur'an dengan benar, jelas, dan fasih.</p>
+            </div>
+
+            <div class="grid-program-utama">
+                <!-- PROGRAM 1: MAKHARIJUL HURUF -->
+                <article class="card program-main-card jello-hover reveal">
+                    <div class="program-main-icon emoji-pop">🗣️</div>
+                    <h3>Belajar Makharijul Huruf</h3>
+                    <p class="program-main-sub">Tempat Keluarnya Huruf</p>
+                    <p class="program-main-desc">
+                        Belajar mengucapkan setiap huruf hijaiyah dari tempat keluarnya yang benar agar
+                        pelafalan tidak tertukar (misalnya <strong>ذ</strong> dengan <strong>ز</strong>).
+                        Fondasi utama bacaan yang jelas dan fasih.
+                    </p>
+                    <ul class="program-main-list">
+                        <li>✅ Pengenalan 29 huruf hijaiyah</li>
+                        <li>✅ Latihan pelafalan dari makhraj</li>
+                        <li>✅ Koreksi langsung oleh pengajar</li>
+                    </ul>
+                    <a href="https://forms.gle/4ijGJsMPJuZSNDnN6" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block">Pilih Program Ini 🚀</a>
+                </article>
+
+                <!-- PROGRAM 2: ILMU TAJWID -->
+                <article class="card program-main-card jello-hover reveal">
+                    <div class="program-main-icon emoji-pop">📖</div>
+                    <h3>Ilmu Tajwid</h3>
+                    <p class="program-main-sub">Kaidah Membaca Al-Qur'an</p>
+                    <p class="program-main-desc">
+                        Mempelajari hukum-hukum bacaan agar Al-Qur'an dibaca sesuai kaidah yang benar,
+                        mulai dari Nun Mati &amp; Tanwin, Mim Mati, hingga hukum Mad (bacaan panjang).
+                    </p>
+                    <ul class="program-main-list">
+                        <li>✅ Ikhfa, Idgham, Izhar, Iqlab</li>
+                        <li>✅ Hukum Mim Mati &amp; Mad</li>
+                        <li>✅ Praktik langsung pada ayat</li>
+                    </ul>
+                    <a href="https://forms.gle/4ijGJsMPJuZSNDnN6" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block">Pilih Program Ini 📖</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         5 KEUNGGULAN SISTEM  ->  slide-keunggulan.html
+         ============================================================ -->
+    <section class="section keunggulan" id="keunggulan">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge">Keunggulan Sistem ⭐</span>
+                <h2 class="section-title">Kenapa Memilih <span>Ayo Mengaji</span>? 🥰</h2>
+                <p class="section-desc">Lima keunggulan sistem belajar kami yang membuat anak cepat bisa &amp; betah mengaji.</p>
+            </div>
+
+            <div class="grid-keunggulan">
+                <a href="slide-keunggulan.html" class="card keunggulan-card jello-hover reveal">
+                    <div class="keunggulan-icon emoji-pop">📚</div>
+                    <h3>Materi Bertahap</h3>
+                    <p>Disusun dari nol, mudah diikuti pemula sekalipun.</p>
+                </a>
+                <a href="slide-keunggulan.html" class="card keunggulan-card jello-hover reveal">
+                    <div class="keunggulan-icon emoji-pop">🎯</div>
+                    <h3>Fokus Praktik</h3>
+                    <p>Lebih banyak praktik membaca, langsung terasa hasilnya.</p>
+                </a>
+                <a href="slide-keunggulan.html" class="card keunggulan-card jello-hover reveal">
+                    <div class="keunggulan-icon emoji-pop">🥰</div>
+                    <h3>Ramah Anak</h3>
+                    <p>Pendekatan menyenangkan, belajar sambil tersenyum.</p>
+                </a>
+                <a href="slide-keunggulan.html" class="card keunggulan-card jello-hover reveal">
+                    <div class="keunggulan-icon emoji-pop">🏠</div>
+                    <h3>Datang ke Rumah</h3>
+                    <p>Guru privat yang datang, anak belajar dengan nyaman.</p>
+                </a>
+                <a href="slide-keunggulan.html" class="card keunggulan-card jello-hover reveal">
+                    <div class="keunggulan-icon emoji-pop">⏳</div>
+                    <h3>Jadwal Fleksibel</h3>
+                    <p>Waktu belajar menyesuaikan kesibukan anak & orang tua.</p>
+                </a>
+            </div>
+
+            <div class="section-cta">
+                <a href="slide-keunggulan.html" class="btn btn-secondary btn-lg">
+                    Jelajahi Journey Belajar Interaktif ✨🚀
+                </a>
+                <p class="section-cta-hint">Lihat tingkatan belajar dalam slider interaktif</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         DOKUMENTASI (memuat Gambar Dokumentasi 1 — path aman %20)
+         ============================================================ -->
+    <section class="section dokumentasi" id="dokumentasi">
+        <div class="container">
+            <div class="doc-showcase">
+                <div class="doc-img-wrap card reveal">
+                    <!-- Gambar Dokumentasi 1: WhatsApp Image 2026-06-12 at 10.34.10.jpeg -->
+                    <img src="assets/WhatsApp%20Image%202026-06-12%20at%2010.34.10.jpeg"
+                         alt="Dokumentasi suasana belajar mengaji bersama Bimbel Ayo Mengaji"
+                         class="doc-img" loading="lazy">
+                </div>
+                <div class="doc-text reveal">
+                    <span class="section-badge">Dokumentasi 📸</span>
+                    <h2 class="section-title">Suasana <span>Belajar Nyata</span> 🥰</h2>
+                    <p class="section-desc" style="margin:0 0 1.4rem;">
+                        Belajar Al-Qur'an dengan tenang, fokus, dan penuh kehangatan. Guru privat kami
+                        mendampingi langsung setiap santri agar bacaannya semakin lancar dan benar. 📖✨
+                    </p>
+                    <ul class="doc-list">
+                        <li>✅ Pendampingan satu per satu</li>
+                        <li>✅ Suasana akrab &amp; menyenangkan</li>
+                        <li>✅ Belajar langsung di rumah santri</li>
+                    </ul>
+                    <a href="https://forms.gle/4ijGJsMPJuZSNDnN6" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">Gabung Sekarang 🚀</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         CTA BANNER PENDAFTARAN
+         ============================================================ -->
+    <section class="cta-banner">
+        <div class="container cta-banner-inner">
+            <h2>Siap Memulai Perjalanan Mengaji? 🚀✨</h2>
+            <p>Daftarkan putra-putri Anda sekarang. Jadwal fleksibel, guru privat datang ke rumah! 🏠</p>
+            <div class="cta-banner-buttons">
+                <a href="https://forms.gle/4ijGJsMPJuZSNDnN6" target="_blank" rel="noopener noreferrer" class="btn btn-light btn-lg">Daftar via Google Form 📝</a>
+                <a href="https://wa.me/6287750275958?text=Assalamualaikum%20Kak%2C%20saya%20tertarik%20mendaftar%20di%20Bimbel%20Ayo%20Mengaji." target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-lg">Tanya via WhatsApp 💬</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FOOTER (komponen global)
+         ============================================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>📖 Bimbel Ayo Mengaji</h3>
+                    <p>Belajar Mengaji Mudah, Menyenangkan, dan Fleksibel. Mencetak generasi Qurani yang cinta Al-Qur'an sejak dini. ✨</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Navigasi 🧭</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">🏠 Beranda</a></li>
+                        <li><a href="tentang-kami.html">✨ Tentang Kami</a></li>
+                        <li><a href="slide-keunggulan.html">⭐ Keunggulan</a></li>
+                        <li><a href="https://forms.gle/4ijGJsMPJuZSNDnN6" target="_blank" rel="noopener noreferrer">📝 Daftar Sekarang</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Kontak Admin 📱</h3>
+                    <p><strong>WhatsApp:</strong> 087750275958</p>
+                    <p><strong>Admin:</strong> Al Dira Achmad Arrazib</p>
+                    <a href="https://wa.me/6287750275958?text=Assalamualaikum%20Kak%2C%20saya%20ingin%20bertanya%20tentang%20Bimbel%20Ayo%20Mengaji." target="_blank" rel="noopener noreferrer" class="btn btn-outline footer-wa">Chat WhatsApp 💬</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Bimbel Ayo Mengaji. Dibuat dengan ❤️ untuk Generasi Qurani.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+         FLOATING WHATSAPP (komponen global)
+         ============================================================ -->
+    <a href="https://wa.me/6287750275958?text=Assalamualaikum%20Kak%2C%20saya%20tertarik%20dengan%20Bimbel%20Ayo%20Mengaji.%20Boleh%20minta%20info%20lengkapnya%3F"
+       class="floating-wa" target="_blank" rel="noopener noreferrer" aria-label="Chat WhatsApp">
+        <span class="floating-wa-icon">💬</span>
+        <span class="floating-wa-text">Daftar Yuk!</span>
+    </a>
+
+    <script src="js/core.js"></script>
+</body>
+</html>

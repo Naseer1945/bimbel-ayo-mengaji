@@ -1,0 +1,317 @@
+/* ==========================================================
+   GLOBAL.CSS — Bimbel Ayo Mengaji
+   Dipakai di SEMUA halaman.
+   1. CSS Variables (Light & Dark Mode)
+   2. Reset & Base
+   3. Typography dasar
+   4. Utility classes
+   5. BACKGROUND EMOJI POP-ART (dekoratif mengambang)
+   6. BUTTONS + Animasi (shimmer, elastic bounce, jello)
+   7. Navbar (global)
+   8. Footer (global)
+   9. Floating WhatsApp
+   10. Animasi global & transisi halaman
+   11. Responsive global
+   ========================================================== */
+
+/* ==========================================================
+   1. CSS VARIABLES — TEMA GLOBAL
+   Palet: Deep Blue, Light Blue, Slate/Navy (dark)
+   ========================================================== */
+:root {
+    --deep-blue:      #1D4ED8;
+    --deep-blue-700:  #1E40AF;
+    --light-blue:     #60A5FA;
+    --sky:            #38BDF8;
+    --amber:          #F59E0B;
+
+    /* LIGHT MODE */
+    --bg-primary:     #F0F7FF;
+    --bg-secondary:   #FFFFFF;
+    --bg-tertiary:    #E7F1FF;
+    --text-primary:   #14253D;
+    --text-secondary: #4A6FA5;
+    --accent-primary: var(--deep-blue);
+    --accent-secondary: var(--sky);
+    --card-bg:        #FFFFFF;
+    --card-border:    #DCEBFB;
+    --card-shadow:    0 10px 30px rgba(29, 78, 216, 0.10);
+    --nav-bg:         rgba(255, 255, 255, 0.92);
+    --hero-bg:        linear-gradient(160deg, #DCEBFF 0%, #C7E0FF 45%, #EAF4FF 100%);
+    --footer-bg:      #0F1F38;
+    --footer-text:    #C7DBF5;
+    --emoji-opacity:  0.10;
+}
+
+/* DARK MODE (Slate / Navy) */
+[data-theme="dark"] {
+    --bg-primary:     #0F172A;
+    --bg-secondary:   #1E293B;
+    --bg-tertiary:    #172554;
+    --text-primary:   #E2E8F0;
+    --text-secondary: #94A3B8;
+    --accent-primary: var(--light-blue);
+    --accent-secondary: var(--sky);
+    --card-bg:        #1E293B;
+    --card-border:    #334155;
+    --card-shadow:    0 10px 30px rgba(0, 0, 0, 0.35);
+    --nav-bg:         rgba(15, 23, 42, 0.92);
+    --hero-bg:        linear-gradient(160deg, #0F172A 0%, #1E293B 50%, #172554 100%);
+    --footer-bg:      #020617;
+    --footer-text:    #94A3B8;
+    --emoji-opacity:  0.07;
+}
+
+/* ==========================================================
+   2. RESET & BASE
+   ========================================================== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.7;
+    overflow-x: hidden;
+    position: relative;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+a   { text-decoration: none; color: inherit; }
+ul  { list-style: none; }
+img { max-width: 100%; height: auto; display: block; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+/* ==========================================================
+   3. TYPOGRAPHY DASAR
+   ========================================================== */
+h1, h2, h3, h4 { font-family: 'Amiri', serif; font-weight: 700; line-height: 1.3; color: var(--text-primary); }
+.section { padding: 90px 0; position: relative; z-index: 1; }
+.section-header { text-align: center; max-width: 760px; margin: 0 auto 3.5rem; }
+.section-badge {
+    display: inline-block; background: var(--bg-tertiary); color: var(--accent-primary);
+    padding: 6px 18px; border-radius: 50px;
+    font-family: 'Nunito', sans-serif; font-size: 0.85rem; font-weight: 800; letter-spacing: 0.3px;
+    margin-bottom: 1rem;
+}
+.section-title { font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 1rem; }
+.section-title span { color: var(--accent-primary); }
+.section-desc { font-size: 1.1rem; color: var(--text-secondary); }
+.text-gradient {
+    background: linear-gradient(90deg, var(--deep-blue), var(--sky));
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+/* ==========================================================
+   4. UTILITY CLASSES
+   ========================================================== */
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 22px; }
+.text-center { text-align: center; }
+.hidden { display: none !important; }
+
+.card {
+    background: var(--card-bg); border: 1px solid var(--card-border);
+    border-radius: 22px; padding: 2rem; box-shadow: var(--card-shadow);
+    transition: transform 0.35s cubic-bezier(.34,1.56,.64,1), box-shadow 0.3s ease, background 0.4s ease, border 0.4s ease;
+}
+.card:hover { transform: translateY(-8px); box-shadow: 0 18px 45px rgba(29, 78, 216, 0.18); }
+
+/* ==========================================================
+   5. BACKGROUND EMOJI POP-ART
+   Layer dekoratif di belakang seluruh konten.
+   Tiap <span> diposisikan via --x/--y, ukuran --s, delay --d.
+   Mengambang lembut & berdenyut, opasitas rendah.
+   ========================================================== */
+.bg-emojis {
+    position: fixed;
+    inset: 0;
+    z-index: 0;                 /* di belakang konten (konten punya z-index >= 1) */
+    pointer-events: none;       /* tidak menghalangi klik */
+    overflow: hidden;
+}
+.bg-emojis span {
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    font-size: calc(var(--s, 1.3rem) * 2.4);
+    opacity: var(--emoji-opacity);
+    filter: saturate(1.2);
+    animation: emojiFloat 9s ease-in-out infinite;
+    animation-delay: var(--d, 0s);
+    transition: opacity 0.4s ease;
+    will-change: transform;
+}
+@keyframes emojiFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+    25%      { transform: translateY(-22px) rotate(8deg) scale(1.08); }
+    50%      { transform: translateY(-6px) rotate(-6deg) scale(0.96); }
+    75%      { transform: translateY(-28px) rotate(5deg) scale(1.05); }
+}
+
+/* ==========================================================
+   6. BUTTONS + ANIMASI (shimmer, elastic, jello)
+   ========================================================== */
+.btn {
+    position: relative;
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 12px 26px; border-radius: 50px;
+    font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 1rem;
+    text-align: center; white-space: nowrap;
+    overflow: hidden;                                   /* untuk efek shimmer */
+    transition: transform 0.35s cubic-bezier(.34,1.56,.64,1), box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+.btn-lg    { padding: 15px 34px; font-size: 1.05rem; }
+.btn-block { width: 100%; }
+
+/* Shimmer: kilauan cahaya yang melintas saat hover */
+.btn::before {
+    content: "";
+    position: absolute; top: 0; left: -150%;
+    width: 60%; height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.55), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.6s ease;
+    pointer-events: none;
+}
+.btn:hover::before { left: 150%; }
+
+/* Hover: membesar elastis + jello shake halus */
+.btn:hover { transform: scale(1.07); animation: jelloSoft 0.6s both; }
+.btn:active { transform: scale(0.96); }
+
+@keyframes jelloSoft {
+    0%, 100% { transform: scale(1.07, 1.07); }
+    20%      { transform: scale(1.16, 0.92); }
+    40%      { transform: scale(0.94, 1.12); }
+    55%      { transform: scale(1.10, 0.97); }
+    70%      { transform: scale(0.99, 1.04); }
+    85%      { transform: scale(1.05, 0.99); }
+}
+
+/* Varian warna tombol */
+.btn-primary   { background: var(--accent-primary); color: #fff; box-shadow: 0 6px 18px rgba(29,78,216,0.35); }
+.btn-secondary { background: linear-gradient(90deg, var(--deep-blue), var(--sky)); color: #fff; box-shadow: 0 6px 18px rgba(56,189,248,0.35); }
+.btn-outline   { background: transparent; color: var(--accent-primary); border: 2px solid var(--accent-primary); }
+.btn-outline:hover { background: var(--accent-primary); color: #fff; }
+.btn-light     { background: #fff; color: var(--deep-blue); }
+.btn-outline-light { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.85); }
+.btn-outline-light:hover { background: #fff; color: var(--deep-blue); }
+.btn-nav-cta   { padding: 9px 20px; font-size: 0.9rem; }
+
+/* Jello hover untuk kartu & emoji (utility) */
+.jello-hover:hover { animation: jelloCard 0.7s both; }
+@keyframes jelloCard {
+    0%, 100% { transform: translateY(-8px) scale(1); }
+    25%      { transform: translateY(-8px) scale(1.04, 0.96); }
+    50%      { transform: translateY(-8px) scale(0.97, 1.03); }
+    75%      { transform: translateY(-8px) scale(1.02, 0.99); }
+}
+
+/* ==========================================================
+   7. NAVBAR (GLOBAL)
+   ========================================================== */
+.navbar {
+    position: fixed; top: 0; left: 0; width: 100%;
+    background: var(--nav-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    z-index: 1000; border-bottom: 1px solid var(--card-border);
+    transition: box-shadow 0.3s ease, background 0.4s ease, border 0.4s ease;
+}
+.navbar.scrolled { box-shadow: 0 6px 28px rgba(0,0,0,0.10); }
+.nav-container { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.logo { font-family: 'Amiri', serif; font-size: 1.6rem; font-weight: 700; color: var(--text-primary); }
+.logo span { color: var(--accent-primary); }
+.nav-list { display: flex; gap: 1.8rem; }
+.nav-link { position: relative; font-weight: 700; font-size: 0.95rem; color: var(--text-secondary); padding: 4px 2px; transition: color 0.3s ease; }
+.nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 3px; border-radius: 3px; background: var(--accent-primary); transition: width 0.3s ease; }
+.nav-link:hover, .nav-link.active { color: var(--accent-primary); }
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+.theme-toggle {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: var(--bg-secondary); border: 2px solid var(--card-border);
+    font-size: 1.2rem; display: flex; align-items: center; justify-content: center;
+    transition: all 0.3s ease;
+}
+.theme-toggle:hover { transform: rotate(25deg) scale(1.12); border-color: var(--accent-primary); }
+.hamburger { display: none; flex-direction: column; gap: 5px; padding: 6px; }
+.hamburger span { display: block; width: 26px; height: 3px; border-radius: 3px; background: var(--text-primary); transition: all 0.3s ease; }
+
+/* ==========================================================
+   8. FOOTER (GLOBAL)
+   ========================================================== */
+.footer { background: var(--footer-bg); color: var(--footer-text); padding: 64px 0 28px; position: relative; z-index: 1; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2.5rem; margin-bottom: 3rem; }
+.footer-col h3 { color: #fff; font-size: 1.35rem; margin-bottom: 1.1rem; }
+.footer-col p { font-size: 0.95rem; margin-bottom: 0.5rem; }
+.footer-links li { margin-bottom: 0.6rem; }
+.footer-links a { font-size: 0.95rem; transition: color 0.3s ease, padding-left 0.3s ease; }
+.footer-links a:hover { color: #fff; padding-left: 6px; }
+.footer-wa { margin-top: 1rem; font-size: 0.9rem; border-color: var(--footer-text); color: var(--footer-text); }
+.footer-wa:hover { background: #fff; color: var(--footer-bg); border-color: #fff; }
+.footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.12); font-size: 0.9rem; opacity: 0.85; }
+
+/* ==========================================================
+   9. FLOATING WHATSAPP (GLOBAL)  087750275958 -> wa.me/6287750275958
+   ========================================================== */
+.floating-wa {
+    position: fixed; bottom: 26px; right: 26px; z-index: 1500;
+    display: inline-flex; align-items: center;
+    background: #25D366; color: #fff; height: 60px; padding: 0 18px;
+    border-radius: 50px; font-weight: 800;
+    box-shadow: 0 8px 22px rgba(37, 211, 102, 0.5);
+    transition: all 0.35s cubic-bezier(.34,1.56,.64,1);
+    overflow: hidden;
+}
+.floating-wa-icon { font-size: 1.6rem; line-height: 1; }
+.floating-wa-text { max-width: 0; opacity: 0; white-space: nowrap; transition: max-width 0.4s ease, opacity 0.3s ease, margin 0.4s ease; }
+.floating-wa:hover { background: #1ebe5a; transform: translateY(-4px) scale(1.06); }
+.floating-wa:hover .floating-wa-text { max-width: 140px; opacity: 1; margin-left: 10px; }
+
+/* "Tease": teks bubble mengembang otomatis sesekali (dipicu js/core.js) */
+.floating-wa.wa-tease .floating-wa-text { max-width: 140px; opacity: 1; margin-left: 10px; }
+.floating-wa.wa-tease { animation: waPulse 1.1s ease 2; }
+@keyframes waPulse {
+    0%, 100% { box-shadow: 0 8px 22px rgba(37, 211, 102, 0.5); }
+    50%      { box-shadow: 0 8px 30px rgba(37, 211, 102, 0.85), 0 0 0 10px rgba(37, 211, 102, 0.12); }
+}
+
+/* ==========================================================
+   10. ANIMASI GLOBAL & TRANSISI HALAMAN
+   ========================================================== */
+.page-fade { animation: pageFade 0.6s ease both; }
+@keyframes pageFade { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+.emoji-pop { display: inline-block; transition: transform 0.35s cubic-bezier(.34,1.56,.64,1); cursor: default; }
+.emoji-pop:hover { transform: scale(1.4) rotate(-12deg); }
+
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+/* ==========================================================
+   11. RESPONSIVE GLOBAL
+   ========================================================== */
+@media (max-width: 940px) {
+    .nav-list {
+        position: fixed; top: 72px; left: -100%;
+        width: 80%; max-width: 320px; height: calc(100vh - 72px);
+        background: var(--nav-bg); backdrop-filter: blur(14px);
+        flex-direction: column; align-items: flex-start; gap: 1.5rem; padding: 2.5rem 2rem;
+        border-right: 1px solid var(--card-border); transition: left 0.4s ease;
+    }
+    .nav-list.active { left: 0; box-shadow: 0 20px 60px rgba(0,0,0,0.25); }
+    .nav-link { font-size: 1.15rem; }
+    .hamburger { display: flex; }
+    .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    .btn-nav-cta { display: none; }
+}
+@media (max-width: 768px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+    .footer-wa { display: inline-flex; }
+    .section { padding: 64px 0; }
+    .bg-emojis span { font-size: calc(var(--s, 1.3rem) * 1.8); }   /* emoji lebih kecil di HP */
+}
+@media (max-width: 480px) {
+    .floating-wa-text { display: none; }
+    .floating-wa { padding: 0; width: 58px; justify-content: center; }
+}

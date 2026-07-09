@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journey Belajar ⭐ | Bimbel Ayo Mengaji</title>
+    <meta name="description" content="Slider interaktif tahapan belajar Al-Qur'an di Bimbel Ayo Mengaji: dari mengenal huruf hijaiyah hingga menjadi generasi Qurani.">
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/main-page.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="page-fade">
+
+    <!-- BACKGROUND EMOJI POP-ART -->
+    <div class="bg-emojis" aria-hidden="true">
+        <span style="--x:6%;  --y:14%; --d:0s;   --s:1.4rem;">📚</span>
+        <span style="--x:18%; --y:72%; --d:1.2s; --s:1.1rem;">✨</span>
+        <span style="--x:30%; --y:30%; --d:2.4s; --s:1.6rem;">🚀</span>
+        <span style="--x:42%; --y:84%; --d:0.6s; --s:1.2rem;">🧠</span>
+        <span style="--x:54%; --y:20%; --d:1.8s; --s:1.5rem;">🎯</span>
+        <span style="--x:66%; --y:66%; --d:3s;   --s:1.3rem;">⭐</span>
+        <span style="--x:78%; --y:26%; --d:0.9s; --s:1.6rem;">🗣️</span>
+        <span style="--x:90%; --y:60%; --d:2.1s; --s:1.4rem;">📖</span>
+        <span style="--x:12%; --y:46%; --d:1.5s; --s:1.2rem;">⭐</span>
+        <span style="--x:48%; --y:54%; --d:2.7s; --s:1.1rem;">✨</span>
+        <span style="--x:72%; --y:88%; --d:0.3s; --s:1.5rem;">📚</span>
+        <span style="--x:84%; --y:12%; --d:3.3s; --s:1.3rem;">🧠</span>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">📖 Ayo <span>Mengaji</span></a>
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html"            class="nav-link">🏠 Beranda</a></li>
+                    <li><a href="tentang-kami.html"      class="nav-link">✨ Tentang</a></li>
+                    <li><a href="slide-keunggulan.html"  class="nav-link">⭐ Keunggulan</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Ganti Tema">☀️</button>
+                <a href="https://forms.gle/4ijGJsMPJuZSNDnN6" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-nav-cta">Daftar 🚀</a>
+                <button class="hamburger" id="hamburger" aria-label="Buka Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+        <div class="container">
+            <p class="breadcrumb"><a href="index.html">🏠 Beranda</a> &nbsp;›&nbsp; Keunggulan & Journey</p>
+            <h1>Journey <span class="text-gradient">Belajar</span> Mengaji ⭐</h1>
+            <p>Ikuti tahapan belajar dari nol hingga lancar membaca Al-Qur'an. Geser slider untuk menjelajah! 🚀</p>
+        </div>
+    </section>
+
+    <!-- SLIDER JOURNEY (dikontrol js/slider.js) -->
+    <section class="journey">
+        <div class="container">
+
+            <!-- Progress bar -->
+            <div class="journey-progress">
+                <div class="journey-progress-bar" id="journey-progress-bar"></div>
+            </div>
+
+            <!-- Viewport slider -->
+            <div class="slider" id="journey-slider">
+                <div class="slider-track">
+
+                    <!-- STEP 1 -->
+                    <div class="slide">
+                        <span class="slide-step">Tahap 1 dari 5</span>
+                        <span class="slide-emoji">📚</span>
+                        <h3>Mengenal Huruf Hijaiyah</h3>
+                        <p>Langkah pertama: mengenal 29 huruf hijaiyah beserta bentuk awal, tengah, dan akhirnya. Fondasi agar anak siap membaca.</p>
+                        <div class="slide-tags">
+                            <span class="slide-tag">🔤 29 Huruf</span>
+                            <span class="slide-tag">👶 Untuk Pemula</span>
+                            <span class="slide-tag">🥰 Ramah Anak</span>
+                        </div>
+                    </div>
+
+                    <!-- STEP 2 -->
+                    <div class="slide">
+                        <span class="slide-step">Tahap 2 dari 5</span>
+                        <span class="slide-emoji">🗣️</span>
+                        <h3>Belajar Makharijul Huruf</h3>
+                        <p>Belajar tempat keluarnya huruf agar pelafalan benar dan tidak tertukar. Bacaan jadi jelas dan fasih.</p>
+                        <div class="slide-tags">
+                            <span class="slide-tag">🎯 Pelafalan Tepat</span>
+                            <span class="slide-tag">👂 Latihan Dengar</span>
+                            <span class="slide-tag">✅ Koreksi Langsung</span>
+                        </div>
+                    </div>
+
+                    <!-- STEP 3 -->
+                    <div class="slide">
+                        <span class="slide-step">Tahap 3 dari 5</span>
+                        <span class="slide-emoji">📖</span>
+                        <h3>Iqra &amp; Tahsin</h3>
+                        <p>Mulai merangkai huruf menjadi bacaan dan memperindah bacaan Al-Qur'an secara bertahap dan menyenangkan.</p>
+                        <div class="slide-tags">
+                            <span class="slide-tag">📕 Metode Iqra</span>
+                            <span class="slide-tag">✨ Tahsin</span>
+                            <span class="slide-tag">📈 Bertahap</span>
+                        </div>
+                    </div>
+
+                    <!-- STEP 4 -->
+                    <div class="slide">
+                        <span class="slide-step">Tahap 4 dari 5</span>
+                        <span class="slide-emoji">📜</span>
+                        <h3>Ilmu Tajwid</h3>
+                        <p>Memahami hukum bacaan: Nun Mati &amp; Tanwin, Mim Mati, hingga Mad, langsung dipraktikkan pada ayat.</p>
+                        <div class="slide-tags">
+                            <span class="slide-tag">📏 Hukum Bacaan</span>
+                            <span class="slide-tag">🧠 Praktik Ayat</span>
+                            <span class="slide-tag">🎓 Sistematis</span>
+                        </div>
+                    </div>
+
+                    <!-- STEP 5 -->
+                    <div class="slide">
+                        <span class="slide-step">Tahap 5 dari 5</span>
+                        <span class="slide-emoji">🤲</span>
+                        <h3>Hafalan &amp; Generasi Qurani</h3>
+                        <p>Menghafal surat pendek &amp; doa harian, membentuk akhlak Qurani. Selamat, santri siap melangkah lebih jauh! 🌟</p>
+                        <div class="slide-tags">
+                            <span class="slide-tag">🧠 Hafalan Juz 30</span>
+                            <span class="slide-tag">🤲 Doa Harian</span>
+                            <span class="slide-tag">🌟 Generasi Qurani</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Tombol navigasi -->
+                <button class="slider-btn prev" aria-label="Sebelumnya">‹</button>
+                <button class="slider-btn next" aria-label="Berikutnya">›</button>
+            </div>
+
+            <!-- Dots (diisi otomatis oleh slider.js) -->
+            <div class="slider-dots" id="slider-dots"></div>
+
+            <!-- Footer slider -->
+            <div class="slider-footer">
+                <span class="slider-counter">Langkah <span id="slide-current">1</span> dari <span id="slide-total">5</span></span>
+                <button class="autoplay-toggle" id="autoplay-toggle">⏸️ Jeda Otomatis</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- KEUNGGULAN PENDUKUNG -->
+    <section class="section keunggulan">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge">Kenapa Kami ⭐</span>
+                <h2 class="section-title">Keunggulan di Setiap <span>Tahapan</span> 🥰</h2>
+            </div>
+            <div class="grid-keunggulan">
+                <div class="card keunggulan-card jello-hover reveal">
+                    <div class="keunggulan-icon emoji-pop">📚</div>
+                    <h3>Kurikulum Bertahap</h3>
+                    <p>Setiap tahap tersusun rapi & saling menyambung.</p>
+                </div>
+                <div class="card keunggulan-card jello-hover reveal">
+                    <div class="keunggulan-icon emoji-pop">🎯</div>
+                    <h3>Target Jelas</h3>
+                    <p>Anak tahu sedang di tahap mana & tujuannya.</p>
+                </div>
+                <div class="card keunggulan-card jello-hover reveal">
+                    <div class="keunggulan-icon emoji-pop">📊</div>
+                    <h3>Evaluasi Tiap Tahap</h3>
+                    <p>Kemajuan dipantau di setiap level belajar.</p>
+                </div>
+                <div class="card keunggulan-card jello-hover reveal">
+                    <div class="keunggulan-icon emoji-pop">🚀</div>
+                    <h3>Naik Level Termotivasi</h3>
+                    <p>Suasana belajar yang membuat anak semangat.</p>
+                </div>
+                <div class="card keunggulan-card jello-hover reveal">
+                    <div class="keunggulan-icon emoji-pop">🏠</div>
+                    <h3>Belajar di Rumah</h3>
+                    <p>Guru privat datang, anak nyaman & fokus.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         DOKUMENTASI (memuat Gambar Dokumentasi 2 — path aman %20)
+         ============================================================ -->
+    <section class="section dokumentasi" id="dokumentasi">
+        <div class="container">
+            <div class="doc-showcase">
+                <div class="doc-text reveal">
+                    <span class="section-badge">Dokumentasi 📸</span>
+                    <h2 class="section-title">Bukti <span>Belajar Seru</span> 🥰</h2>
+                    <p class="section-desc" style="margin:0 0 1.4rem;">
+                        Setiap tahapan dijalani langsung bersama pengajar. Santri belajar dengan tenang,
+                        fokus, dan penuh semangat hingga lancar membaca Al-Qur'an. 📖✨
+                    </p>
+                    <ul class="doc-list">
+                        <li>✅ Tatap muka langsung di rumah</li>
+                        <li>✅ Bimbingan tiap tahap belajar</li>
+                        <li>✅ Suasana hangat &amp; menyenangkan</li>
+                    </ul>
+                    <a href="https://forms.gle/4ijGJsMPJuZSNDnN6" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">Gabung Sekarang 🚀</a>
+                </div>
+                <div class="doc-img-wrap card reveal">
+                    <!-- Gambar Dokumentasi 2: WhatsApp Image 2026-06-12 at 10.34.48.jpeg -->
+                    <img src="assets/WhatsApp%20Image%202026-06-12%20at%2010.34.48.jpeg"
+                         alt="Dokumentasi suasana belajar mengaji bersama Bimbel Ayo Mengaji"
+                         class="doc-img" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner">
+        <div class="container cta-banner-inner">
+            <h2>Mulai dari Tahap Pertama Yuk! 🚀✨</h2>
+            <p>Daftarkan anak Anda dan biarkan mereka menapaki journey menjadi generasi Qurani. 🌟</p>
+            <div class="cta-banner-buttons">
+                <a href="https://forms.gle/4ijGJsMPJuZSNDnN6" target="_blank" rel="noopener noreferrer" class="btn btn-light btn-lg">Daftar via Google Form 📝</a>
+                <a href="https://wa.me/6287750275958?text=Assalamualaikum%20Kak%2C%20saya%20ingin%20bertanya%20tentang%20tahapan%20belajar%20di%20Bimbel%20Ayo%20Mengaji." target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-lg">Tanya via WhatsApp 💬</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>📖 Bimbel Ayo Mengaji</h3>
+                    <p>Belajar Mengaji Mudah, Menyenangkan, dan Fleksibel. Mencetak generasi Qurani yang cinta Al-Qur'an sejak dini. ✨</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Navigasi 🧭</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">🏠 Beranda</a></li>
+                        <li><a href="tentang-kami.html">✨ Tentang Kami</a></li>
+                        <li><a href="https://forms.gle/4ijGJsMPJuZSNDnN6" target="_blank" rel="noopener noreferrer">📝 Daftar Sekarang</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Kontak Admin 📱</h3>
+                    <p><strong>WhatsApp:</strong> 087750275958</p>
+                    <p><strong>Admin:</strong> Al Dira Achmad Arrazib</p>
+                    <a href="https://wa.me/6287750275958?text=Assalamualaikum%20Kak%2C%20saya%20ingin%20bertanya%20tentang%20Bimbel%20Ayo%20Mengaji." target="_blank" rel="noopener noreferrer" class="btn btn-outline footer-wa">Chat WhatsApp 💬</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Bimbel Ayo Mengaji. Dibuat dengan ❤️ untuk Generasi Qurani.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP -->
+    <a href="https://wa.me/6287750275958?text=Assalamualaikum%20Kak%2C%20saya%20tertarik%20dengan%20Bimbel%20Ayo%20Mengaji.%20Boleh%20minta%20info%20lengkapnya%3F"
+       class="floating-wa" target="_blank" rel="noopener noreferrer" aria-label="Chat WhatsApp">
+        <span class="floating-wa-icon">💬</span>
+        <span class="floating-wa-text">Daftar Yuk!</span>
+    </a>
+
+    <script src="js/core.js"></script>
+    <script src="js/slider.js"></script>
+</body>
+</html>
